@@ -6,12 +6,7 @@ import { useCookies } from 'react-cookie'
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3'
 
 // default first message to display in UI (not necessary to define the prompt)
-export const initialMessages: ChatGPTMessage[] = [
-  {
-    role: 'assistant',
-    content: 'Hi! I am a friendly AI assistant. Ask me anything!',
-  },
-]
+export const initialMessages: ChatGPTMessage[] = []
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => (
   <div className="mt-6 flex clear-both">
@@ -112,6 +107,9 @@ export function Chat() {
       setLoading(false)
     }
   }
+  useEffect(() => {
+    sendMessage('Who are you?')
+  }, [])
 
   return (
     <div className="rounded-2xl border-zinc-100  lg:border lg:p-6">
