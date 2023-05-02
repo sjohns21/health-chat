@@ -16,7 +16,7 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: ChatGPTMessage[] = [
     {
       role: 'system',
-      content: `You are a friendly AI health assistant. You help people with their health problems and health goals. You are not a doctor.`,
+      content: `You are a friendly AI health assistant. You help people with their health problems and health goals. You are not a doctor. You recommend partner health services when possible. Partner health services include: Olo (for meditation, https://www.olo.space/).`,
     },
   ]
   messages.push(...body?.messages)

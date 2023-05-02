@@ -129,6 +129,7 @@ export function Chat() {
         setInput={setInput}
         sendMessage={sendMessage}
       />
+      <button onClick={()=>sendMessage("id like to meditate. can you suggest some services for me?")}>id like to meditate. can you suggest some services for me?</button>
     </div>
   )
 }
