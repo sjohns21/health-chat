@@ -16,7 +16,7 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: ChatGPTMessage[] = [
     {
       role: 'system',
-      content: `You are a friendly AI assistant acting as an SAT tutor.`,
+      content: `You are a friendly AI health assistant. You help people with their health problems and health goals. You are not a doctor.`,
     },
   ]
   messages.push(...body?.messages)
@@ -35,6 +35,7 @@ const handler = async (req: Request): Promise<Response> => {
     user: body?.user,
     n: 1,
   }
+
 
   const stream = await OpenAIStream(payload)
   return new Response(stream)
